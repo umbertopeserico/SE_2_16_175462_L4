@@ -1,32 +1,33 @@
 {
-    "name": "employees_manager",
-    "version": "0.0.0",
-    "description": "Employees management app",
-    "main": "app.js",
-    "private": true,
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon ./bin/www"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/umbertopeserico/SE_2_16_175462_L4.git"
-    },
-    "author": "Umberto Peserico",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/umbertopeserico/SE_2_16_175462_L4/issues"
-    },
-    "homepage": "https://github.com/umbertopeserico/SE_2_16_175462_L4#readme",
-    "dependencies": {
-        "body-parser": "~1.15.2",
-        "cookie-parser": "~1.4.3",
-        "debug": "~2.2.0",
-        "express": "~4.14.0",
-        "express-generator": "^4.14.0",
-        "morgan": "~1.7.0",
-        "nodemon": "^1.11.0",
-        "pug": "~2.0.0-beta6",
-        "serve-favicon": "~2.3.0"
-    }
+  "name": "employees_manager",
+  "version": "0.0.0",
+  "description": "Employees management app",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umbertopeserico/SE_2_16_175462_L4.git"
+  },
+  "author": "Umberto Peserico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umbertopeserico/SE_2_16_175462_L4/issues"
+  },
+  "homepage": "https://github.com/umbertopeserico/SE_2_16_175462_L4#readme",
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "express-generator": "^4.14.0",
+    "method-override": "^2.3.7",
+    "morgan": "~1.7.0",
+    "nodemon": "^1.11.0",
+    "pug": "~2.0.0-beta6",
+    "serve-favicon": "~2.3.0"
+  }
 }
