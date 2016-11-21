@@ -3,3 +3,24 @@ extends ../layout
 block content
     h1 Employees#index
     p Find me in views/employees/index.pug
+    
+    a(href='/employees/new') Add employee
+    
+    br
+    br
+    
+    table(border = '1')
+        thead
+            tr
+                td ID
+                td Name
+                td Surname
+                td Level
+                td Salary
+        tbody
+            each employee in employees
+                td #{employee.id}
+                td #{employee.name}
+                td #{employee.surname}
+                td #{employee.level}
+                td #{employee.salary}

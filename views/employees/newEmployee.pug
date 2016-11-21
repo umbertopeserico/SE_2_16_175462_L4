@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    h1 Employees#newEmployee
+    
+    form(action="/employees" method='POST')
+        label(for='id') ID
+        input(type='text' name='id')
+        
+        br
+    
+        label(for='name') Name
+        input(type='text' name='name')
+        
+        br
+        
+        label(for='surname') Surname
+        input(type='text' name='surname')
+        
+        br
+        
+        label(for='level') Level
+        input(type='text' name='level')
+        
+        br
+        
+        label(for='salary') Salary
+        input(type='text' name='salary')
+        
+        br
+        br
+        
+        input(type='submit' value='Add employee')
