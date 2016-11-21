@@ -17,10 +17,21 @@ block content
                 td Surname
                 td Level
                 td Salary
+                td 
+                td 
         tbody
             each employee in employees
-                td #{employee.id}
-                td #{employee.name}
-                td #{employee.surname}
-                td #{employee.level}
-                td #{employee.salary}
+                tr
+                    td #{employee.id}
+                    td #{employee.name}
+                    td #{employee.surname}
+                    td #{employee.level}
+                    td #{employee.salary}
+                    td
+                        - var updateUrl= '/employees/edit/'+employee.id
+                        a(href=updateUrl) Edit
+                    td
+                        - var deleteUrl= '/employees/'+employee.id
+                        form(method='POST' action=deleteUrl)
+                            input(type='hidden' name='_method' value='DELETE')
+                            button(type='submit') Delete

@@ -8,11 +8,23 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/new', function (req, res, next) {
-    employeesCtrl.newEmployee(req, res);
+    employeesCtrl.new(req, res);
 });
 
 router.post('/', function (req, res, next) {
-    employeesCtrl.createEmployee(req, res);
+    employeesCtrl.create(req, res);
+});
+
+router.get('/edit/:id', function (req, res, next) {
+    employeesCtrl.edit(req, res);
+});
+
+router.put('/update/:id', function (req, res, next) {
+    employeesCtrl.update(req, res);
+});
+
+router.delete('/:id', function (req, res, next) {
+    employeesCtrl.destroy(req, res);
 });
 
 module.exports = router;
