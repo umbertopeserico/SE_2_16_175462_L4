@@ -1,4 +1,42 @@
 extends layout
 
 block content
-    h1 Home page
+    fieldset
+        legend Search or delete employee
+        form
+            label ID 
+            input(type="text" id="searchId")
+            button(type="button" id="searchButton") Search
+            button(type="button" id="deleteButton") Delete
+            button(type="button" id="showForm" onclick="toggleEmployeeFormAction()") Show module
+        
+    fieldset(id="employeeFieldset")
+        legend Employee info
+        form(id="employeeForm")
+            label(for='id') ID
+            input(type='text' name='id' value=employee.id)
+
+            br
+
+            label(for='name') Name
+            input(type='text' name='name' value=employee.name)
+
+            br
+
+            label(for='surname') Surname
+            input(type='text' name='surname' value=employee.surname)
+
+            br
+
+            label(for='level') Level
+            input(type='text' name='level' value=employee.level)
+
+            br
+
+            label(for='salary') Salary
+            input(type='text' name='salary' value=employee.salary)
+
+            br
+            br
+
+            button(type='button' value='Save employee') Save employee

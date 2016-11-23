@@ -1,0 +1,4 @@
+function toggleEmployeeFormAction() {
+    toggleEmployeeForm();
+    cleanEmployeeForm();
+}
