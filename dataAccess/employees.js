@@ -1,12 +1,22 @@
+// This imports the model of an employee
 var employee = require('../models/employee.js');
+
+// This is a fake data source until a database is implemented
 var employees = [];
 
+// This is a default employee inserted
 employees.push(new employee(1, "Umberto", "Peserico", '1', '2'));
 
+/*
+ * This function retrieves all employees
+ */
 function getAllEmployees() {
     return employees;
 }
 
+/*
+ * This function adds a new employee validating it
+ */
 function addEmployee(employee) {
     if (validateEmployee(employee)) {
         employees.push(employee);
@@ -16,9 +26,12 @@ function addEmployee(employee) {
     }
 }
 
+/*
+ * This function retrieves an employee by id
+ */
 function findEmployee(id) {
     var employee = null;
-    employees.forEach(function (elem, index, array) {
+    getAllEmployees().forEach(function (elem, index, array) {
         if (elem.id == id) {
             employee = elem;
         }
@@ -26,6 +39,9 @@ function findEmployee(id) {
     return employee;
 }
 
+/*
+ * This function updates an employee validating it
+ */
 function updateEmployee(editedEmployee, id) {
     if (validateEmployee(editedEmployee)) {
         var employee = findEmployee(id);
@@ -40,6 +56,9 @@ function updateEmployee(editedEmployee, id) {
     }
 }
 
+/*
+ * This function destroys an employee by id
+ */
 function destroyEmployee(editedEmployee, id) {
     var employee = findEmployee(id);
     var index = employees.indexOf(employee);
@@ -49,8 +68,17 @@ function destroyEmployee(editedEmployee, id) {
     return true;
 }
 
+/*
+ * This function validates an employee.
+ * The error structure is this:
+ *  {
+ *      field: 'name',
+ *      message: 'Error for name'
+ *  }
+ */
 function validateEmployee(employee) {
     var valid = true;
+
     if (employee.id == "") {
         employee.id = getLastId() + 1;
     }
@@ -123,9 +151,12 @@ function validateEmployee(employee) {
     return valid;
 }
 
+/*
+ * This function retrieves greater id in the datastore
+ */
 function getLastId() {
     var id = 0;
-    employees.forEach(function (elem, index, array) {
+    getAllEmployees().forEach(function (elem, index, array) {
         if (elem.id > id) {
             id = elem.id;
         }
