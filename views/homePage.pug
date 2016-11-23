@@ -3,16 +3,17 @@ extends layout
 block content
     fieldset
         legend Search or delete employee
-        form
+        form(id="searchForm" method="POST")
             label ID 
             input(type="text" id="searchId")
-            button(type="button" id="searchButton") Search
-            button(type="button" id="deleteButton") Delete
+            button(type="button" id="searchButton" onclick="searchButtonClickAction()") Search
+            button(type="button" id="deleteButton" onclick="destroyButtonClickAction()") Delete
             button(type="button" id="showForm" onclick="toggleEmployeeFormAction()") Show module
         
-    fieldset(id="employeeFieldset")
+    - var displayStyle = (displayForm === undefined ? "" : "display: "+ displayForm )
+    fieldset(id="employeeFieldset" style=displayStyle)
         legend Employee info
-        form(id="employeeForm")
+        form(action="/homePage/save" id="employeeForm" method="POST")
             label(for='id') ID
             input(type='text' name='id' value=employee.id)
 
@@ -39,4 +40,4 @@ block content
             br
             br
 
-            button(type='button' value='Save employee') Save employee
+            button(type='submit' value='Save employee') Save employee
