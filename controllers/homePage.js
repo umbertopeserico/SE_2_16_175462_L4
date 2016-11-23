@@ -29,8 +29,8 @@ function save(request, response) {
     var employee = employeesDA.find(id);
 
     if (employee == null) {
+        console.log("EMPLOYEE NOT FOUND");
         employee = new Employee(params.id, params.name, params.surname, params.level, params.salary);
-
         employeesDA.create(employee);
     } else {
         var editedEmployee = new Employee();
@@ -39,12 +39,12 @@ function save(request, response) {
         editedEmployee.surname = params.surname;
         editedEmployee.level = params.level;
         editedEmployee.salary = params.salary;
-
         employeesDA.update(editedEmployee, id);
     }
 
     response.render('homePage', {
-        employee: employee
+        employee: (editedEmployee === undefined ? employee : editedEmployee),
+        displayForm: 'block'
     });
 }
 
