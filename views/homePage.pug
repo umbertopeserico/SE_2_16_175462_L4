@@ -16,28 +16,51 @@ block content
         form(action="/homePage/save" id="employeeForm" method="POST")
             label(for='id') ID
             input(type='text' name='id' value=employee.id)
-
             br
+            each error in employee.errors
+                if error.field == 'id'
+                    div(class="error")
+                        span= error.message
+                        br
 
             label(for='name') Name
             input(type='text' name='name' value=employee.name)
-
             br
+            each error in employee.errors
+                if error.field == 'name' 
+                    div(class="error")
+                        span= error.message
+                        br
+                        br
 
             label(for='surname') Surname
             input(type='text' name='surname' value=employee.surname)
-
             br
+            each error in employee.errors
+                if error.field == 'surname' 
+                    div(class="error")
+                        span= error.message
+                        br
+                        br
 
             label(for='level') Level
             input(type='text' name='level' value=employee.level)
-
             br
+            each error in employee.errors
+                if error.field == 'level' 
+                    div(class="error")
+                        span= error.message
+                        br
+                        br
 
             label(for='salary') Salary
             input(type='text' name='salary' value=employee.salary)
-
             br
+            each error in employee.errors
+                if error.field == 'salary' 
+                    div(class="error")
+                        span= error.message
+                        br
             br
 
             button(type='submit' value='Save employee') Save employee
