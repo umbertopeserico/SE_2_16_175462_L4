@@ -11,7 +11,7 @@ router.get('/new', function (req, res, next) {
     employeesCtrl.new(req, res);
 });
 
-router.post('/', function (req, res, next) {
+router.post('/create', function (req, res, next) {
     employeesCtrl.create(req, res);
 });
 
@@ -19,11 +19,11 @@ router.get('/edit/:id', function (req, res, next) {
     employeesCtrl.edit(req, res);
 });
 
-router.put('/update/:id', function (req, res, next) {
+router.post('/update/:id', function (req, res, next) {
     employeesCtrl.update(req, res);
 });
 
-router.delete('/:id', function (req, res, next) {
+router.get('/destroy/:id', function (req, res, next) {
     employeesCtrl.destroy(req, res);
 });
 
