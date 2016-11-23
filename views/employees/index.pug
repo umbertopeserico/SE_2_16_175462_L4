@@ -31,7 +31,5 @@ block content
                         - var updateUrl= '/employees/edit/'+employee.id
                         a(href=updateUrl) Edit
                     td
-                        - var deleteUrl= '/employees/'+employee.id
-                        form(method='POST' action=deleteUrl)
-                            input(type='hidden' name='_method' value='DELETE')
-                            button(type='submit') Delete
+                        - var deleteUrl= '/employees/destroy/'+employee.id
+                        a(href=deleteUrl) Destroy
