@@ -1,6 +1,10 @@
+// Import to use in this file
 var employeesDA = require('../dataAccess/employees.js');
 var Employee = require('../models/employee.js');
 
+/*
+ * This function lists all employees in the system
+ */
 function index(request, response) {
     var employees = employeesDA.all();
     response.render('employees/index', {
@@ -8,6 +12,9 @@ function index(request, response) {
     });
 }
 
+/*
+ * This function shows a form to insert a new employee
+ */
 function newEmployee(request, response) {
     var employee = new Employee();
     response.render('employees/new', {
@@ -15,6 +22,9 @@ function newEmployee(request, response) {
     });
 }
 
+/*
+ * This function creates an employee managing errors
+ */
 function createEmployee(request, response) {
     var params = request.body;
     var employee = new Employee(params.id, params.name, params.surname, params.level, params.salary);
@@ -28,6 +38,9 @@ function createEmployee(request, response) {
     }
 }
 
+/*
+ * This function shows a form to edit a employee
+ */
 function editEmployee(request, response) {
     var id = parseInt(request.params.id);
     var employee = employeesDA.find(id);
@@ -40,6 +53,9 @@ function editEmployee(request, response) {
     }
 }
 
+/*
+ * This function shows a form to insert a new employee
+ */
 function updateEmployee(request, response) {
     var id = parseInt(request.params.id);
     var params = request.body;
@@ -73,6 +89,9 @@ function updateEmployee(request, response) {
     }
 }
 
+/*
+ * This function destroyes an employee with param id
+ */
 function destroyEmployee(request, response) {
     var id = parseInt(request.params.id);
     if (employeesDA.destroy(id)) {
