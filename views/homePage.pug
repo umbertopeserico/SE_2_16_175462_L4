@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    fieldset
+        legend Search or delete employee
+        form(id="searchForm" method="POST")
+            label ID 
+            input(type="text" id="searchId")
+            button(type="button" id="searchButton" onclick="searchButtonClickAction()") Search
+            button(type="button" id="deleteButton" onclick="destroyButtonClickAction()") Delete
+            button(type="button" id="showForm" onclick="toggleEmployeeFormAction()") Show module
+        
+    - var displayStyle = (displayForm === undefined ? "" : "display: "+ displayForm )
+    fieldset(id="employeeFieldset" style=displayStyle)
+        legend Employee info
+        form(action="/homePage/save" id="employeeForm" method="POST")
+            label(for='id') ID
+            input(type='text' name='id' value=employee.id)
+
+            br
+
+            label(for='name') Name
+            input(type='text' name='name' value=employee.name)
+
+            br
+
+            label(for='surname') Surname
+            input(type='text' name='surname' value=employee.surname)
+
+            br
+
+            label(for='level') Level
+            input(type='text' name='level' value=employee.level)
+
+            br
+
+            label(for='salary') Salary
+            input(type='text' name='salary' value=employee.salary)
+
+            br
+            br
+
+            button(type='submit' value='Save employee') Save employee

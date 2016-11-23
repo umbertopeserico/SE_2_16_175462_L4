@@ -25,11 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 var indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
 
-var usersRoutes = require('./routes/users');
-app.use('/users', usersRoutes);
-
 var employeesRoutes = require('./routes/employees.js');
 app.use('/employees', employeesRoutes);
+
+var homePageRoutes = require('./routes/homePage.js');
+app.use('/homePage', homePageRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
