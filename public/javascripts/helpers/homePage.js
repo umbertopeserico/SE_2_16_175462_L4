@@ -5,8 +5,13 @@ function toggleEmployeeForm() {
 
 function cleanEmployeeForm() {
     var form = document.getElementById('employeeForm');
-    var formElements = form.querySelectorAll('input');
-    formElements.forEach(function (elem, index, array) {
+    var formInputs = form.querySelectorAll('input');
+    formInputs.forEach(function (elem, index, array) {
         elem.value = "";
+    });
+
+    var formErrros = form.querySelectorAll('.error');
+    formErrros.forEach(function (elem, index, array) {
+        form.removeChild(elem);
     });
 }
